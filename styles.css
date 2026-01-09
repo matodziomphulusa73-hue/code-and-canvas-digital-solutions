@@ -1,6 +1,11 @@
-/* Custom UI Logic */
+/* Static UI Refinements */
 html {
     scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Deep Navy Mesh Background for Hero */
@@ -41,17 +46,25 @@ html {
     padding: 0.625rem 1.25rem;
     border-radius: 9999px;
     border: 1px solid rgba(0, 210, 255, 0.3);
+    background: rgba(0, 210, 255, 0.05);
+}
+
+.nav-quote-btn:hover {
+    background: rgba(0, 210, 255, 0.15);
+    border-color: #00D2FF;
 }
 
 /* Buttons */
 .cta-button, .submit-btn {
     background: linear-gradient(135deg, #00D2FF 0%, #3a7bd5 100%);
     box-shadow: 0 10px 25px -5px rgba(0, 210, 255, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cta-button:hover, .submit-btn:hover {
     box-shadow: 0 15px 35px -8px rgba(0, 210, 255, 0.5);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    opacity: 0.95;
 }
 
 /* Glassmorphism Components */
@@ -87,7 +100,6 @@ html {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    backdrop-filter: blur(4px);
 }
 
 .pulse-dot {
@@ -106,7 +118,7 @@ html {
     border-radius: 9999px;
     background-color: #00D2FF;
     opacity: 0.75;
-    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 .dot-inner {
@@ -120,20 +132,20 @@ html {
 
 @keyframes ping {
     75%, 100% {
-        transform: scale(2);
+        transform: scale(2.5);
         opacity: 0;
     }
 }
 
 /* Floating Art Animations */
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
 }
 
 .animate-float {
-    animation: float 5s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite;
 }
 
 /* Logo Strip Text */
@@ -146,48 +158,49 @@ html {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Success Modal overlay */
+/* Modal Styling */
 .modal-overlay {
     background: rgba(10, 25, 47, 0.95);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
+    transition: opacity 0.3s ease;
 }
 
 .scale-in {
-    animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes scaleIn {
     from {
         opacity: 0;
-        transform: scale(0.95);
+        transform: scale(0.9) translateY(20px);
     }
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1) translateY(0);
     }
 }
 
 /* Social Icon Button */
 .social-icon {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 9999px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon:hover {
     background: rgba(0, 210, 255, 0.2);
     color: #00D2FF;
-    transform: translateY(-2px);
+    transform: translateY(-4px) scale(1.1);
 }
 
 /* Modal Scrollbar Customization */
 .no-scrollbar::-webkit-scrollbar {
-    width: 4px;
+    width: 5px;
 }
 
 .no-scrollbar::-webkit-scrollbar-track {
@@ -195,20 +208,20 @@ html {
 }
 
 .no-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(0, 210, 255, 0.2);
+    background: rgba(0, 210, 255, 0.3);
     border-radius: 10px;
 }
 
 .no-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 210, 255, 0.4);
-}
-
-/* Modal Table Styling */
-#details-content .group:last-child {
-    border-bottom: none;
+    background: rgba(0, 210, 255, 0.5);
 }
 
 /* Logo Text Transition */
 #logo-text {
     transition: color 0.3s ease;
+}
+
+/* Pricing Badge Glow */
+.pricing-badge {
+    box-shadow: 0 0 40px -10px rgba(0, 210, 255, 0.1);
 }

@@ -185,7 +185,30 @@ html {
     transform: translateY(-2px);
 }
 
-/* Utility - Hide Scrollbar */
+/* Modal Scrollbar Customization */
 .no-scrollbar::-webkit-scrollbar {
-    display: none;
+    width: 4px;
+}
+
+.no-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 210, 255, 0.2);
+    border-radius: 10px;
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 210, 255, 0.4);
+}
+
+/* Modal Table Styling */
+#details-content .group:last-child {
+    border-bottom: none;
+}
+
+/* Logo Text Transition */
+#logo-text {
+    transition: color 0.3s ease;
 }
